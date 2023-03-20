@@ -59,11 +59,11 @@ docker image ls | grep mnadeem
 
 
 ```bash
-REPOSITORY                                                      TAG                 IMAGE ID            CREATED              SIZE
-mnadeem/boot-otel-tempo-provider1     0.0.1-SNAPSHOT      7ddceebcc722        About a minute ago   169MB
-mnadeem/boot-otel-tempo-api           0.0.1-SNAPSHOT      a301242388a1        2 minutes ago        147MB
-mnadeem/boot-otel-tempo-docker        0.0.1-SNAPSHOT      061a20db744b        4 minutes ago        130MB
-```
+REPOSITORY                          TAG              IMAGE ID       CREATED          SIZE
+mnadeem/boot-otel-tempo-provider1   0.0.1-SNAPSHOT   d16f96c59536   29 seconds ago   168MB
+mnadeem/boot-otel-tempo-api         0.0.1-SNAPSHOT   8324fcedb409   33 seconds ago   148MB
+mnadeem/boot-otel-tempo-docker      0.0.1-SNAPSHOT   dc12190d9235   57 seconds ago   129MB
+mnadeem/boot-otel-tempo-docker      latest           dc12190d9235   57 seconds ago   129MB
 
 And then either `docker compose` or `docker stack`
 
@@ -83,6 +83,27 @@ docker stack deploy --compose-file docker-compose.yaml trace
 docker stack services trace
 docker stack rm trace
 ````
+
+```bash
+docker stack services trace
+```
+
+Output
+
+```
+ID             NAME                              MODE         REPLICAS   IMAGE                                              PORTS
+1xzuq25hlowj   trace_boot-otel-tempo-api         replicated   0/1        mnadeem/boot-otel-tempo-api:0.0.1-SNAPSHOT         *:8080->8080/tcp
+0nwf98b4vp3q   trace_boot-otel-tempo-provider1   replicated   0/1        mnadeem/boot-otel-tempo-provider1:0.0.1-SNAPSHOT   *:8090->8090/tcp
+g1x9bo8vusot   trace_grafana                     replicated   0/1        grafana/grafana:latest                             *:3000->3000/tcp
+4g7ikj69c2rf   trace_loki                        replicated   0/1        grafana/loki:2.2.0                                 *:3101->3100/tcp
+la4g6cptmczx   trace_pgadmin                     replicated   1/1        dpage/pgadmin4:latest                              *:7070->80/tcp
+adbo9s3l5lry   trace_prometheus                  replicated   1/1        prom/prometheus:latest                             *:9090->9090/tcp
+mumkw4pcm3qr   trace_promtail                    replicated   0/1        grafana/promtail:2.2.0                             
+n0la3spu0gd1   trace_provider1-db                replicated   0/1        postgres:latest                                    *:5432->5432/tcp
+wuh6o3ptypmz   trace_tempo                       replicated   0/1        grafana/tempo:0.7.0                                *:3102->3100/tcp, *:14250->14250/tcp, *:14268->14268/tcp, *:55680->55680/tcp
+nw5sazythb7i   trace_tempo-query                 replicated   1/1        grafana/tempo-query:0.7.0                          *:16686->16686/tcp
+mxvkb23d3g9g   trace_volume_exporter             replicated   0/1        mnadeem/volume_exporter:latest                     *:9889->9888/tcp
+```
 
 # Variations 
 
