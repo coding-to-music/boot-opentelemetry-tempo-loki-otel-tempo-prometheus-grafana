@@ -1,3 +1,31 @@
+ boot-opentelemetry-tempo-loki-otel-tempo-prometheus-grafana$ 
+
+# 🚀 Project demonstrating Complete Observability Stack utilizing Prometheus, Loki (For distributed logging), Tempo (For Distributed tracing, this basically uses Jaeger Internally), Grafana for Java/spring based applications (With OpenTelemetry auto / manual Instrumentation) involving multiple microservices with DB interactions 🚀
+
+https://github.com/coding-to-music/boot-opentelemetry-tempo-loki-otel-tempo-prometheus-grafana$ 
+
+https://reachmnadeem.wordpress.com/2021/03/04/observability-for-java-spring-based-applications-using-opentelemetry/
+
+From / By 
+
+## Environment variables:
+
+```java
+
+```
+
+## GitHub
+
+```java
+git init
+git add .
+git remote remove origin
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:coding-to-music/boot-opentelemetry-tempo-loki-otel-tempo-prometheus-grafana$ .git
+git push -u origin main
+```
+
 # Project Demonstrating Observability For Java Spring Applications
 
 This project demonstrates Observability using:

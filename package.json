@@ -1,0 +1,16 @@
+{
+  "name": "boot-opentelemetry-tempo-loki-otel-tempo-prometheus-grafana",
+  "version": "1.0.0",
+  "description": "This project demonstrates Observability using:",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "deploy": "git add . && git commit -m Build && git push",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
