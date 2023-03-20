@@ -82,6 +82,8 @@ docker swarm init
 docker stack deploy --compose-file docker-compose.yaml trace
 docker stack services trace
 docker stack rm trace
+
+docker stack ls
 ````
 
 ```bash
