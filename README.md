@@ -72,7 +72,11 @@ And then either `docker compose` or `docker stack`
 
 
 ````bash
-docker-compose up
+docker compose up -d
+
+or 
+
+docker compose up
 ````
 
 ## Docker Stack
@@ -153,6 +157,10 @@ You can view it in [Grafana](http://localhost:3000/explore?orgId=1&left=%5B%22no
 
 
 # Connecting To PostgreSQL DB
+
+Unable to create Grafana datasource for Postgres
+PGAdmin can't connect to postgres 
+There are no dashboads included
 
 [Connect](http://localhost:7070/login?next=%2F)
 
